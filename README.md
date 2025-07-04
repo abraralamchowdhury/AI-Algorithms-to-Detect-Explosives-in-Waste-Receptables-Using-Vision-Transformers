@@ -1,55 +1,54 @@
-# AI-Algorithms-to-Detect-Explosives-in-Waste-Receptables-Using-Vision-Transformers
-# IED Detection in Waste Receptacles Using Vision Transformers
+# 💣🗑️ IED Detection in Waste Receptacles Using Vision Transformers 🚀
 
-## Project Overview
-This project addresses the critical problem of detecting improvised explosive devices (IEDs) hidden in public waste receptacles to enhance public safety. Traditional detection methods have limitations, and this work explores the use of **Vision Transformer (ViT)** models for image-based classification of IEDs versus non-IED waste.
+## 📋 Project Overview
+This project tackles the critical challenge of detecting **improvised explosive devices (IEDs)** hidden in public waste bins to enhance public safety. Traditional detection methods have limitations, so we explored **Vision Transformer (ViT)** models for image-based IED detection.
 
-Using an augmented TrashNet dataset combined with additional IED images, we formulated a **binary classification task** to distinguish between IED-containing images and various types of waste.
+We created a **binary classification task** using an augmented TrashNet dataset and additional IED images to distinguish between IED-containing and regular waste images.
 
-## What We Have Done
-- **Dataset Preparation:**
-  - Utilized an augmented TrashNet dataset containing 3041 images: 514 IED images and 2527 non-IED images (cardboard, glass, metal, paper, plastic, general trash).
-  - Resized all images to 224x224 pixels for compatibility with the ViT model.
-  - Split the dataset into 70% training, 15% validation, and 15% testing subsets.
+## ✅ What We Have Done
 
-- **Model Architecture:**
-  - Implemented the Vision Transformer (ViT) b-32 model, leveraging pre-trained weights for transfer learning.
-  - Adapted ViT, originally developed for NLP, to process images by dividing them into patches with positional encoding, followed by transformer encoder layers.
-  - Used a softmax output layer and cross-entropy loss function for binary classification.
+- 🗂️ **Dataset Preparation:**
+  - Used an augmented TrashNet dataset with **3041 images**: 514 IED and 2527 non-IED (cardboard, glass, metal, paper, plastic, general trash).
+  - Resized all images to **224x224 pixels** for ViT compatibility.
+  - Split  **70% training**, **15% validation**, **15% testing**.
 
-- **Training Setup:**
-  - Trained the model for 10 epochs on an NVIDIA Tesla T4 GPU using Google Colab.
-  - Optimized with the Adam optimizer and a learning rate of 0.001.
-  - Performed hyperparameter tuning using the validation set to prevent overfitting.
+- 🧠 **Model Architecture:**
+  - Implemented **ViT b-32**, leveraging pre-trained weights for transfer learning.
+  - Adapted ViT to process images as patches with positional encoding and transformer encoder layers.
+  - Used a **softmax output layer** and **cross-entropy loss** for binary classification.
 
-- **Evaluation Metrics:**
-  - Precision: 44%
-  - Recall: 42%
-  - F1 Score: 43%
-  - Accuracy: 93%
+- 🏋️ **Training Setup:**
+  - Trained for **10 epochs** on an **NVIDIA Tesla T4 GPU** (Google Colab).
+  - Used **Adam optimizer** (learning rate: 0.001).
+  - Tuned hyperparameters using the validation set to prevent overfitting.
+
+- 📊 **Evaluation Metrics:**
+  - **Precision:** 44%
+  - **Recall:** 42%
+  - **F1 Score:** 43%
+  - **Accuracy:** 93%
   
-  *Note:* The high accuracy reflects the model’s ability to classify non-IED images correctly due to class imbalance, while precision and recall indicate room for improvement in detecting IEDs specifically.
+  > ⚠️ *High accuracy reflects strong non-IED classification due to class imbalance; precision/recall indicate room for improved IED detection.*
 
-- **Results:**
-  - Achieved a validation accuracy of up to 94.95% and a testing accuracy of 93.03% after 10 epochs.
-  - Observed fluctuations in validation loss indicating potential overfitting, addressed through hyperparameter tuning.
-  - Demonstrated that ViT can effectively generalize for this task, though further improvements are needed to enhance detection reliability.
+- 🏆 **Results:**
+  - Validation accuracy up to **94.95%**, test accuracy **93.03%** after 10 epochs.
+  - Monitored validation loss for overfitting; tuned hyperparameters accordingly.
+  - Showed ViT’s potential for this safety-critical task, with further improvements needed.
 
-## Experimental Environment
-- Hardware: NVIDIA Tesla T4 GPU, 16 GB RAM, Intel Xeon CPU
-- Platform: Google Colab
-- Libraries: PyTorch/TensorFlow (assumed), ViT pre-trained weights
+## 🖥️ Experimental Environment
+- **Hardware:** NVIDIA Tesla T4 GPU, 16 GB RAM, Intel Xeon CPU
+- **Platform:** Google Colab
+- **Libraries:** PyTorch/TensorFlow (ViT pre-trained weights)
 
-## Future Work
-- Expand and balance the dataset with more varied IED and non-IED samples.
-- Explore advanced data augmentation and ensemble learning methods.
-- Experiment with other model architectures or fine-tune hyperparameters further.
-- Improve precision and recall to reduce false positives and negatives in real-world scenarios.
+## 🔭 Future Work
+- Expand and balance the dataset with more diverse IED/non-IED samples.
+- Explore advanced data augmentation and ensemble methods.
+- Experiment with other architectures and hyperparameter fine-tuning.
+- Focus on boosting precision and recall to minimize real-world false positives/negatives.
 
-## Acknowledgments
-Thanks to Dr. Amoakoh Gyasi-Agyei for continuous support throughout this project.
+## 🙏 Acknowledgments
+Special thanks to **Dr. Amoakoh Gyasi-Agyei** for ongoing support throughout this project.
 
 ---
 
-This project demonstrates the potential of Vision Transformers in enhancing public safety by detecting explosives in waste management systems.
-
+This project demonstrates the promise of **Vision Transformers** in boosting public safety by detecting explosives in waste management systems. 🛡️🧠
